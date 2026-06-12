@@ -6,7 +6,7 @@
 // To HIDE a business:   set enabled: false
 // To SHOW a business:   set enabled: true
 // To ADD a business:    copy any entry, change id + details
-// To ADD an image:      set image: "assets/images/your-file.jpg"
+// To ADD an image:      set images: ["assets/images/businesses/your-file.jpg"]
 // To update Tebex link: change tebexLink to your package URL
 // ============================================================
 
@@ -28,7 +28,7 @@ const STORE_CONFIG = {
           location: "TBD",
           type: "Automotive / Repairs",
           tebexLink: "https://your-store.tebex.io/package/otos-auto",
-          images: [], // e.g. ["assets/images/otos-auto.jpg", "assets/images/otos-auto-2.jpg"]
+          images: [], // e.g. ["assets/images/businesses/otos-auto-1.jpg", "assets/images/businesses/otos-auto-2.jpg"]
           features: [
             { icon: "👥", text: "Employee Management — hire, fire, and set job grades" },
             { icon: "💰", text: "Society Account — dedicated business bank account" },
