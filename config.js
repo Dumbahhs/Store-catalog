@@ -214,7 +214,7 @@ const STORE_CONFIG = {
         },
         {
           id: "bahama-mamas",
-          enabled: true,
+          enabled: false,
           name: "Bahama Mamas",
           description: "The city's hottest nightclub. Premium sound system, full bar, and a constant stream of high-profile guests.",
           location: "TBD",
