@@ -87,8 +87,17 @@ ul { list-style: none; }
 .nav-logo {
   height: 40px;
   width: auto;
+  max-width: none;
   object-fit: contain;
   display: block;
+}
+
+/* Prevent logo images in footer from stretching */
+.footer-brand img {
+  height: 48px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
 }
 
 .nav-links {
