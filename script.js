@@ -93,6 +93,7 @@ function renderBusinesses() {
     html += `
       <div class="category-section">
         <div class="category-label-row reveal">
+          <div class="category-line"></div>
           <span class="category-tag">${cat.category}</span>
           <div class="category-line"></div>
         </div>

@@ -682,8 +682,8 @@ ul { list-style: none; }
 }
 .category-tag {
   font-family: 'Bebas Neue', 'Impact', sans-serif;
-  font-size: 1rem;
-  letter-spacing: 0.18em;
+  font-size: 1.4rem;
+  letter-spacing: 0.22em;
   color: var(--accent);
   white-space: nowrap;
 }
