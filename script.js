@@ -31,21 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Gallery thumbnail switcher ────────────────────────────
-  const mainImg = document.querySelector('.gallery-main img');
-  const thumbs  = document.querySelectorAll('.gallery-thumb');
-  if (mainImg && thumbs.length) {
-    thumbs.forEach(thumb => {
-      thumb.addEventListener('click', () => {
-        const newSrc = thumb.querySelector('img').src;
-        mainImg.style.opacity = '0';
-        setTimeout(() => { mainImg.src = newSrc; mainImg.style.opacity = '1'; }, 200);
-        thumbs.forEach(t => t.classList.remove('active'));
-        thumb.classList.add('active');
-      });
-    });
-  }
-
   // ── Scroll-reveal (IntersectionObserver) ─────────────────
   revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -126,9 +111,10 @@ function renderBusinesses() {
 }
 
 function buildCard(b) {
-  const thumb = b.image
-    ? `<img src="${b.image}" alt="${b.name}" />`
-    : `<div class="placeholder-img"><span class="ph-icon">&#128247;</span><span>${b.name}</span><span style="opacity:.4;font-size:.7rem;font-weight:400">Add image in config.js</span></div>`;
+  const firstImg = b.images && b.images.length > 0 ? b.images[0] : null;
+  const thumb = firstImg
+    ? `<img src="${firstImg}" alt="${b.name}" />`
+    : `<div class="placeholder-img"><span class="ph-icon">&#128247;</span><span>${b.name}</span><span style="opacity:.4;font-size:.7rem;font-weight:400">Add images in config.js</span></div>`;
 
   return `
     <article class="card reveal">
@@ -179,9 +165,8 @@ function renderDetail() {
   const bc = document.getElementById('breadcrumb-current');
   if (bc) bc.textContent = business.name;
 
-  const mainThumb = business.image
-    ? `<img src="../${business.image}" alt="${business.name}" />`
-    : `<div class="placeholder-img"><span class="ph-icon">&#128247;</span><span>${business.name}</span><span style="opacity:.4;font-size:.7rem;font-weight:400">Add image in config.js</span></div>`;
+  const imgs = business.images && business.images.length > 0 ? business.images : [];
+  const galleryHTML = buildGalleryHTML(imgs, business.name);
 
   const featuresHTML = business.features.map(f => `
     <div class="feature-item">
@@ -193,7 +178,7 @@ function renderDetail() {
     <div class="detail-hero">
 
       <div class="detail-gallery">
-        <div class="gallery-main">${mainThumb}</div>
+        ${galleryHTML}
       </div>
 
       <div class="detail-info">
@@ -247,4 +232,63 @@ function renderDetail() {
     <a href="../index.html" class="btn btn-secondary btn-sm">&#8592; Back to Catalog</a>`;
 
   observeNew(container);
+  initGallery(container);
+}
+
+// ════════════════════════════════════════════════════════════
+// GALLERY — build HTML + wire up interactions
+// ════════════════════════════════════════════════════════════
+function buildGalleryHTML(images, name) {
+  if (images.length === 0) {
+    return `
+      <div class="gallery-main">
+        <div class="placeholder-img">
+          <span class="ph-icon">&#128247;</span>
+          <span>${name}</span>
+          <span style="opacity:.4;font-size:.7rem;font-weight:400">Add images in config.js</span>
+        </div>
+      </div>`;
+  }
+
+  const first = images[0];
+  const arrows = images.length > 1 ? `
+    <button class="gallery-prev" aria-label="Previous image">&#8249;</button>
+    <button class="gallery-next" aria-label="Next image">&#8250;</button>` : '';
+
+  const thumbsHTML = images.length > 1 ? `
+    <div class="gallery-thumbs">
+      ${images.map((src, i) => `
+        <button class="gallery-thumb${i === 0 ? ' active' : ''}" data-index="${i}">
+          <img src="../${src}" alt="${name} image ${i + 1}" />
+        </button>`).join('')}
+    </div>` : '';
+
+  return `
+    <div class="gallery-main">
+      <img src="../${first}" alt="${name}" class="gallery-active-img" />
+      ${arrows}
+    </div>
+    ${thumbsHTML}`;
+}
+
+function initGallery(container) {
+  const mainImg = container.querySelector('.gallery-active-img');
+  const thumbs  = container.querySelectorAll('.gallery-thumb');
+  const prev    = container.querySelector('.gallery-prev');
+  const next    = container.querySelector('.gallery-next');
+  if (!mainImg || thumbs.length === 0) return;
+
+  let current = 0;
+  const srcs = Array.from(thumbs).map(t => t.querySelector('img').src);
+
+  function goTo(idx) {
+    current = ((idx % srcs.length) + srcs.length) % srcs.length;
+    mainImg.style.opacity = '0';
+    setTimeout(() => { mainImg.src = srcs[current]; mainImg.style.opacity = '1'; }, 200);
+    thumbs.forEach((t, i) => t.classList.toggle('active', i === current));
+  }
+
+  thumbs.forEach((thumb, i) => thumb.addEventListener('click', () => goTo(i)));
+  if (prev) prev.addEventListener('click', () => goTo(current - 1));
+  if (next) next.addEventListener('click', () => goTo(current + 1));
 }

@@ -28,7 +28,7 @@ const STORE_CONFIG = {
           location: "TBD",
           type: "Automotive / Repairs",
           tebexLink: "https://your-store.tebex.io/package/otos-auto",
-          image: "", // e.g. "assets/images/otos-auto.jpg"
+          images: [], // e.g. ["assets/images/otos-auto.jpg", "assets/images/otos-auto-2.jpg"]
           features: [
             { icon: "👥", text: "Employee Management — hire, fire, and set job grades" },
             { icon: "💰", text: "Society Account — dedicated business bank account" },
@@ -45,7 +45,7 @@ const STORE_CONFIG = {
           location: "LSIA Industrial District",
           type: "Automotive / Services",
           tebexLink: "https://your-store.tebex.io/package/bennys",
-          image: "",
+          images: [],
           features: [
             { icon: "👥", text: "Employee Management — hire, fire, and set job grades" },
             { icon: "💰", text: "Society Account — dedicated business bank account" },
@@ -63,7 +63,7 @@ const STORE_CONFIG = {
           location: "TBD",
           type: "Automotive / Performance",
           tebexLink: "https://your-store.tebex.io/package/redline",
-          image: "",
+          images: [],
           features: [
             { icon: "👥", text: "Employee Management — hire, fire, and set job grades" },
             { icon: "💰", text: "Society Account — dedicated business bank account" },
@@ -89,7 +89,7 @@ const STORE_CONFIG = {
           location: "TBD",
           type: "Food & Beverage",
           tebexLink: "https://your-store.tebex.io/package/catcafe",
-          image: "",
+          images: [],
           features: [
             { icon: "👥", text: "Employee Management — hire, fire, and set job grades" },
             { icon: "💰", text: "Society Account — dedicated business bank account" },
@@ -107,7 +107,7 @@ const STORE_CONFIG = {
           location: "Little Seoul",
           type: "Food & Beverage",
           tebexLink: "https://your-store.tebex.io/package/burgershot",
-          image: "",
+          images: [],
           features: [
             { icon: "👥", text: "Employee Management — hire, fire, and set job grades" },
             { icon: "💰", text: "Society Account — dedicated business bank account" },
@@ -125,7 +125,7 @@ const STORE_CONFIG = {
           location: "TBD",
           type: "Food & Beverage",
           tebexLink: "https://your-store.tebex.io/package/hornys",
-          image: "",
+          images: [],
           features: [
             { icon: "👥", text: "Employee Management — hire, fire, and set job grades" },
             { icon: "💰", text: "Society Account — dedicated business bank account" },
@@ -142,7 +142,7 @@ const STORE_CONFIG = {
           location: "TBD",
           type: "Food & Beverage / Fine Dining",
           tebexLink: "https://your-store.tebex.io/package/koi",
-          image: "",
+          images: [],
           features: [
             { icon: "👥", text: "Employee Management — hire, fire, and set job grades" },
             { icon: "💰", text: "Society Account — dedicated business bank account" },
@@ -159,7 +159,7 @@ const STORE_CONFIG = {
           location: "TBD",
           type: "Food & Beverage / Fine Dining",
           tebexLink: "https://your-store.tebex.io/package/pearls",
-          image: "",
+          images: [],
           features: [
             { icon: "👥", text: "Employee Management — hire, fire, and set job grades" },
             { icon: "💰", text: "Society Account — dedicated business bank account" },
@@ -176,7 +176,7 @@ const STORE_CONFIG = {
           location: "TBD",
           type: "Food & Beverage",
           tebexLink: "https://your-store.tebex.io/package/upnatom",
-          image: "",
+          images: [],
           features: [
             { icon: "👥", text: "Employee Management — hire, fire, and set job grades" },
             { icon: "💰", text: "Society Account — dedicated business bank account" },
@@ -202,7 +202,7 @@ const STORE_CONFIG = {
           location: "Strawberry",
           type: "Entertainment / Nightlife",
           tebexLink: "https://your-store.tebex.io/package/vanilla-unicorn",
-          image: "",
+          images: [],
           features: [
             { icon: "👥", text: "Employee Management — hire, fire, and set job grades" },
             { icon: "💰", text: "Society Account — dedicated business bank account" },
@@ -220,7 +220,7 @@ const STORE_CONFIG = {
           location: "TBD",
           type: "Entertainment / Nightlife",
           tebexLink: "https://your-store.tebex.io/package/bahama-mamas",
-          image: "",
+          images: [],
           features: [
             { icon: "👥", text: "Employee Management — hire, fire, and set job grades" },
             { icon: "💰", text: "Society Account — dedicated business bank account" },
