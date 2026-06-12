@@ -7,6 +7,7 @@
   <title>Throttle RP — Official Store Catalog</title>
   <meta name="description" content="Browse available businesses, import vehicles, and exclusive 1-of-1 opportunities on Throttle RP." />
   <link rel="stylesheet" href="styles.css" />
+  <script src="config.js"></script>
 </head>
 <body>
 
@@ -65,72 +66,16 @@
   </section>
 
   <!-- ════════════════════════════════════════════════════════
-       BUSINESSES PREVIEW
+       BUSINESSES — rendered dynamically from config.js
+       To add/remove/toggle businesses, edit config.js only.
        ════════════════════════════════════════════════════════ -->
-  <section class="section">
+  <section class="section" id="businesses">
     <div class="section-header reveal">
       <span class="section-label">Available Now</span>
       <h2 class="section-title">Businesses</h2>
       <p class="section-desc">Purchase a fully operational business — complete with employee management, society accounts, and more.</p>
     </div>
-
-    <div class="cards-grid">
-
-      <!-- ══════════════════════════════════════════════════
-           HOW TO ADD A NEW BUSINESS CARD:
-           1. Copy the entire <article class="card"> block below.
-           2. Paste it inside .cards-grid.
-           3. Update the name, description, and href.
-           4. Replace the img src with your screenshot path
-              e.g. src="../assets/images/my-business.jpg"
-           ══════════════════════════════════════════════════ -->
-
-      <article class="card reveal">
-        <div class="card-thumb">
-          <!-- ══ UPDATE: Replace src with your screenshot ══
-               Example: src="assets/images/bennys-thumb.jpg" -->
-          <img src="" alt="Benny's Original Motor Works"
-               data-placeholder="Benny's Motor Works" />
-          <span class="card-badge">Business</span>
-        </div>
-        <div class="card-body">
-          <h3 class="card-title">Benny's Original Motor Works</h3>
-          <p class="card-desc">The city's premier custom vehicle modification shop. Offers full tuning, wraps, and upgrades to the public.</p>
-        </div>
-        <div class="card-footer">
-          <a href="businesses/bennys.html" class="btn btn-sm btn-primary">View Details</a>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-thumb">
-          <img src="" alt="Burger Shot" data-placeholder="Burger Shot" />
-          <span class="card-badge">Business</span>
-        </div>
-        <div class="card-body">
-          <h3 class="card-title">Burger Shot</h3>
-          <p class="card-desc">One of the most iconic fast food chains in the city. High foot traffic location with full staff management.</p>
-        </div>
-        <div class="card-footer">
-          <a href="businesses/burgershot.html" class="btn btn-sm btn-primary">View Details</a>
-        </div>
-      </article>
-
-      <article class="card reveal">
-        <div class="card-thumb">
-          <img src="" alt="Vanilla Unicorn" data-placeholder="Vanilla Unicorn" />
-          <span class="card-badge">Business</span>
-        </div>
-        <div class="card-body">
-          <h3 class="card-title">Vanilla Unicorn</h3>
-          <p class="card-desc">An upscale establishment with a loyal clientele. Includes VIP access controls and private management tools.</p>
-        </div>
-        <div class="card-footer">
-          <a href="businesses/vanilla-unicorn.html" class="btn btn-sm btn-primary">View Details</a>
-        </div>
-      </article>
-
-    </div>
+    <div id="businesses-container"></div>
   </section>
 
   <div class="divider"></div>

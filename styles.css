@@ -646,6 +646,29 @@ ul { list-style: none; }
 .category-intro p { color: var(--text-secondary); font-size: 1rem; line-height: 1.65; max-width: 560px; }
 
 /* ════════════════════════════════════════════════════════════
+   CATEGORY SECTIONS (dynamic business groups)
+   ════════════════════════════════════════════════════════════ */
+.category-section { margin-bottom: 52px; }
+.category-label-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.category-tag {
+  font-family: 'Bebas Neue', 'Impact', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.category-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ════════════════════════════════════════════════════════════
    DIVIDER
    ════════════════════════════════════════════════════════════ */
 .divider {

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business — Throttle RP</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <!-- config.js MUST load before script.js -->
+  <script src="../config.js"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="../index.html" class="nav-brand">
+      <img src="../assets/images/throttlelogo.png" alt="Throttle RP" class="nav-logo" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="detail.html" class="active">Businesses</a></li>
+      <li><a href="../imports/porsche-gt3.html">Imports</a></li>
+      <li><a href="../oneofone/information.html">1-of-1</a></li>
+      <li><a href="https://your-store.tebex.io" class="nav-cta" target="_blank" rel="noopener">Visit Store</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="detail.html">Businesses</a>
+    <a href="../imports/porsche-gt3.html">Imports</a>
+    <a href="../oneofone/information.html">1-of-1</a>
+    <a href="https://your-store.tebex.io" target="_blank" rel="noopener" style="color:var(--accent)">Visit Store ↗</a>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../index.html">Home</a>
+    <span class="sep">/</span>
+    <a href="../index.html#businesses">Businesses</a>
+    <span class="sep">/</span>
+    <span class="current" id="breadcrumb-current">Loading...</span>
+  </nav>
+
+  <!-- DETAIL CONTENT — rendered by script.js from config.js -->
+  <main class="detail-wrapper">
+    <div id="detail-container">
+      <p style="color:var(--text-muted);text-align:center;padding:80px 0;">Loading...</p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-tagline">A premier FiveM roleplay community.<br>All store transactions are processed securely through Tebex.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Catalog</h4>
+        <a href="../index.html">Businesses</a>
+        <a href="../imports/porsche-gt3.html">Import Vehicles</a>
+        <a href="../oneofone/information.html">1-of-1 Information</a>
+      </div>
+      <div class="footer-col">
+        <h4>Links</h4>
+        <a href="https://discord.gg/2PJqjAezZ9" target="_blank" rel="noopener">Discord Server</a>
+        <a href="https://your-store.tebex.io" target="_blank" rel="noopener">Tebex Store</a>
+      </div>
+    </div>
+    <div class="compliance-block">
+      <div class="compliance-title">Important Information</div>
+      <ul class="compliance-list">
+        <li>All purchases grant a limited license to use virtual content on our server.</li>
+        <li>Virtual items have no real-world monetary value.</li>
+        <li>All sales are final except where required by applicable law.</li>
+        <li>Players banned for violating server rules are not entitled to refunds for delivered purchases.</li>
+        <li>Purchasers must be at least 16 years old.</li>
+      </ul>
+      <p class="compliance-agree">
+        By purchasing through our Tebex store, you agree to our server policies and the applicable
+        <a href="https://www.tebex.io/legal" target="_blank" rel="noopener" style="color:var(--accent)">Tebex Terms &amp; Conditions</a>.
+      </p>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Throttle RP. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
