@@ -291,7 +291,12 @@ const STORE_CONFIG = {
           location: "TBD",
           type: "Entertainment / Nightlife",
           tebexLink: "https://your-store.tebex.io/package/bahama-mamas",
-          images: [],
+          images: [
+            "assets/images/businesses/bahanamamas-inside.png",
+            "assets/images/businesses/bahanamamas-inside2.png",
+            "assets/images/businesses/bahanamamas-inside3.png",
+            "assets/images/businesses/bahanamamas-inside4.png",
+          ],
           features: [
             { icon: "👥", text: "Employee Management — hire, fire, and set job grades" },
             { icon: "💰", text: "Society Account — dedicated business bank account" },
