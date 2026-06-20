@@ -309,5 +309,65 @@ const STORE_CONFIG = {
       ]
     },
 
-  ] // end businesses
+  ], // end businesses
+
+  // ══════════════════════════════════════════════════════════
+  // DONOCARS — weekly rotation
+  //
+  // rotationStartDate : the Monday your first week started (YYYY-MM-DD)
+  // rotationDays      : how many days each slot is live (7 = weekly)
+  // slots             : array of weeks. slots[0] = week 1, slots[1] = week 2, …
+  //
+  // TO ADD A NEW WEEK:
+  //   Copy the slot array below, uncomment it, fill in the cars.
+  //   The rotation wraps around automatically when all slots are shown.
+  // ══════════════════════════════════════════════════════════
+  donocars: {
+    rotationStartDate: "2026-06-23",
+    rotationDays: 7,
+    slots: [
+
+      // ── WEEK 1 ────────────────────────────────────────────
+      [
+        {
+          name: "6STR Imponte Ruiner 450 Custom",
+          description: "Savage American muscle rebuilt from the ground up with 6STR's custom tuning package.",
+          image: "assets/images/imports/imponte-ruiner-1.png",
+          href: "imports/imponte-ruiner-450.html",
+        },
+        {
+          name: "6STR Pegassi Tempesta Custom",
+          description: "Italian hypercar engineering pushed to its limit with the 6STR custom treatment.",
+          image: "assets/images/imports/pegassi-tempesta-1.png",
+          href: "imports/pegassi-tempesta.html",
+        },
+        {
+          name: "Obey Argento",
+          description: "Luxury German engineering with premium tuning support and custom sound design.",
+          image: "assets/images/imports/obey-argento-1.png",
+          href: "imports/obey-argento.html",
+        },
+        {
+          name: "Vapid Sandstorm D205",
+          description: "Heavy-duty off-road monster with livery support and impressive LODs.",
+          image: "assets/images/imports/vapid-sandstorm-1.png",
+          href: "imports/vapid-sandstorm.html",
+        },
+        {
+          name: "Vulcar Hachura R Custom",
+          description: "Sharp rally-inspired compact with full tuning support and distinctive bodywork.",
+          image: "assets/images/imports/vulcar-hachura-1.png",
+          href: "imports/vulcar-hachura.html",
+        },
+      ],
+
+      // ── WEEK 2 ────────────────────────────────────────────
+      // Uncomment and fill in when ready:
+      // [
+      //   { name: "Car Name", description: "...", image: "assets/images/imports/xxx-1.png", href: "imports/xxx.html" },
+      // ],
+
+    ],
+  },
+
 };

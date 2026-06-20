@@ -54,6 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Render dynamic sections ───────────────────────────────
   if (document.getElementById('businesses-container')) renderBusinesses();
   if (document.getElementById('detail-container'))     renderDetail();
+  if (document.getElementById('donocars-container'))   renderDonocars();
+
+  // ── Static gallery pages (donocar detail pages) ───────────
+  if (document.querySelector('.gallery-main') && !document.getElementById('detail-container')) {
+    initGallery(document);
+  }
 
 });
 
@@ -245,6 +251,70 @@ function renderDetail() {
 }
 
 // ════════════════════════════════════════════════════════════
+// DONOCARS — weekly rotation + countdown timer
+// ════════════════════════════════════════════════════════════
+function renderDonocars() {
+  const container = document.getElementById('donocars-container');
+  const timerEl   = document.getElementById('donocars-timer');
+  if (!container || typeof STORE_CONFIG === 'undefined' || !STORE_CONFIG.donocars) return;
+
+  const cfg        = STORE_CONFIG.donocars;
+  const startMs    = new Date(cfg.rotationStartDate + 'T00:00:00').getTime();
+  const slotMs     = cfg.rotationDays * 24 * 60 * 60 * 1000;
+  const elapsed    = Date.now() - startMs;
+  const rawSlot    = Math.max(0, Math.floor(elapsed / slotMs));
+  const currentSlot = rawSlot % cfg.slots.length;
+  const nextRotationMs = startMs + (rawSlot + 1) * slotMs;
+
+  const cars = cfg.slots[currentSlot] || [];
+
+  container.innerHTML = `<div class="cards-grid">${cars.map(c => `
+    <article class="card reveal">
+      <div class="card-thumb">
+        <img src="${c.image}" alt="${c.name}" />
+        <span class="card-badge">Donocar</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">${c.name}</h3>
+        <p class="card-desc">${c.description}</p>
+      </div>
+      <div class="card-footer">
+        <a href="${c.href}" class="btn btn-sm btn-primary">View Details</a>
+      </div>
+    </article>`).join('')}
+  </div>`;
+  observeNew(container);
+
+  if (!timerEl) return;
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function tick() {
+    const remaining = nextRotationMs - Date.now();
+    if (remaining <= 0) { location.reload(); return; }
+    const d = Math.floor(remaining / 86400000);
+    const h = Math.floor((remaining % 86400000) / 3600000);
+    const m = Math.floor((remaining % 3600000) / 60000);
+    const s = Math.floor((remaining % 60000) / 1000);
+    timerEl.innerHTML = `
+      <div class="rotation-banner">
+        <span class="rotation-label">Next Rotation In</span>
+        <span class="rotation-countdown">
+          <span class="rt-unit"><span class="rt-num">${d}</span><span class="rt-tag">d</span></span>
+          <span class="rt-sep">:</span>
+          <span class="rt-unit"><span class="rt-num">${pad(h)}</span><span class="rt-tag">h</span></span>
+          <span class="rt-sep">:</span>
+          <span class="rt-unit"><span class="rt-num">${pad(m)}</span><span class="rt-tag">m</span></span>
+          <span class="rt-sep">:</span>
+          <span class="rt-unit"><span class="rt-num">${pad(s)}</span><span class="rt-tag">s</span></span>
+        </span>
+      </div>`;
+  }
+  tick();
+  setInterval(tick, 1000);
+}
+
+// ════════════════════════════════════════════════════════════
 // GALLERY — build HTML + wire up interactions
 // ════════════════════════════════════════════════════════════
 function buildGalleryHTML(images, name) {
@@ -281,7 +351,7 @@ function buildGalleryHTML(images, name) {
 }
 
 function initGallery(container) {
-  const mainImg = container.querySelector('.gallery-active-img');
+  const mainImg = container.querySelector('.gallery-active-img') || container.querySelector('.gallery-main img');
   const thumbs  = container.querySelectorAll('.gallery-thumb');
   const prev    = container.querySelector('.gallery-prev');
   const next    = container.querySelector('.gallery-next');
