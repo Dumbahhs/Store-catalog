@@ -129,7 +129,7 @@ const STORE_CONFIG = {
         },
         {
           id: "burgershot",
-          enabled: true,
+          enabled: false,
           name: "Burger Shot",
           description: "One of the most iconic fast food chains in the city. High foot traffic location with full staff management.",
           location: "Little Seoul",
@@ -151,7 +151,7 @@ const STORE_CONFIG = {
         },
         {
           id: "pizzathis",
-          enabled: true,
+          enabled: false,
           name: "Pizza This",
           description: "A city staple for quick, reliable pizza. Known for its busy lunch rush and steady evening crowd. High foot traffic guaranteed.",
           location: "Los Santos",
@@ -180,7 +180,11 @@ const STORE_CONFIG = {
           location: "TBD",
           type: "Food & Beverage",
           tebexLink: "https://your-store.tebex.io/package/hornys",
-          images: [],
+          images: [
+            "assets/images/businesses/hornys-outside.png",
+            "assets/images/businesses/hornys-inside.png",
+            "assets/images/businesses/hornys-kitchen.png",
+          ],
           features: [
             { icon: "👥", text: "Employee Management — hire, fire, and set job grades" },
             { icon: "💰", text: "Society Account — dedicated business bank account" },
@@ -231,7 +235,11 @@ const STORE_CONFIG = {
           location: "TBD",
           type: "Food & Beverage",
           tebexLink: "https://your-store.tebex.io/package/upnatom",
-          images: [],
+          images: [
+            "assets/images/businesses/upandatom-outside.png",
+            "assets/images/businesses/upandatom-inside.png",
+            "assets/images/businesses/upandatom-kitchen.png",
+          ],
           features: [
             { icon: "👥", text: "Employee Management — hire, fire, and set job grades" },
             { icon: "💰", text: "Society Account — dedicated business bank account" },
@@ -251,7 +259,7 @@ const STORE_CONFIG = {
       items: [
         {
           id: "vanilla-unicorn",
-          enabled: true,
+          enabled: false,
           name: "Vanilla Unicorn",
           description: "An upscale establishment with a loyal and recurring clientele. VIP access controls and private management tools included.",
           location: "Strawberry",
