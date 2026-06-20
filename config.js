@@ -19,6 +19,7 @@ const STORE_CONFIG = {
     // ══════════════════════════════════════════════════════
     {
       category: "Mechanics",
+      notice: "If you want to bring in your own MLO, please open a ticket with staff before buying anything from Tebex related to businesses. This is so staff can give you the go-ahead.",
       items: [
         {
           id: "lscustoms",
@@ -73,6 +74,7 @@ const STORE_CONFIG = {
     // ══════════════════════════════════════════════════════
     {
       category: "Dispensaries",
+      notice: "If you want to bring in your own MLO, please open a ticket with staff before buying anything from Tebex related to businesses. This is so staff can give you the go-ahead.",
       items: [
         {
           id: "ferdinand",
@@ -103,6 +105,7 @@ const STORE_CONFIG = {
     // ══════════════════════════════════════════════════════
     {
       category: "Restaurants",
+      notice: "If you want to bring in your own MLO, please open a ticket with staff before buying anything from Tebex related to businesses. This is so staff can give you the go-ahead.",
       items: [
         {
           id: "catcafe",
@@ -256,6 +259,7 @@ const STORE_CONFIG = {
     // ══════════════════════════════════════════════════════
     {
       category: "Clubs",
+      notice: "If you want to bring in your own MLO, please open a ticket with staff before buying anything from Tebex related to businesses. This is so staff can give you the go-ahead.",
       items: [
         {
           id: "vanilla-unicorn",

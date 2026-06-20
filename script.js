@@ -92,6 +92,13 @@ function renderBusinesses() {
       ? `<div class="cards-grid">${enabled.map(b => buildCard(b)).join('')}</div>`
       : `<p style="color:var(--text-muted);text-align:center;padding:32px 0;font-size:.95rem;">No Businesses Available at this time.</p>`;
 
+    const noticeHTML = cat.notice
+      ? `<div class="notice notice-warning reveal" style="max-width:860px;margin:0 auto 28px;">
+           <span class="notice-icon">&#9888;&#65039;</span>
+           <span>${cat.notice}</span>
+         </div>`
+      : '';
+
     html += `
       <div class="category-section">
         <div class="category-label-row reveal">
@@ -99,6 +106,7 @@ function renderBusinesses() {
           <span class="category-tag">${cat.category}</span>
           <div class="category-line"></div>
         </div>
+        ${noticeHTML}
         ${cardsHTML}
       </div>`;
   });
