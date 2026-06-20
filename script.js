@@ -162,7 +162,7 @@ function renderDetail() {
   }
 
   // Update page title + breadcrumb
-  document.title = `${business.name} — Throttle RP`;
+  document.title = `${business.name} — Skyfall Roleplay`;
   const bc = document.getElementById('breadcrumb-current');
   if (bc) bc.textContent = business.name;
 

@@ -1,5 +1,5 @@
 // ============================================================
-// THROTTLE RP — STORE CONFIG
+// SKYFALL ROLEPLAY — STORE CONFIG
 // ============================================================
 // This is the ONLY file you need to edit to manage listings.
 //
