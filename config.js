@@ -324,7 +324,7 @@ const STORE_CONFIG = {
   // ══════════════════════════════════════════════════════════
   donocars: {
     rotationStartDate: "2026-06-23",
-    rotationDays: 7,
+    rotationDays: 0.000289, // TESTING: 25 seconds — change back to 7 for weekly rotation
     slots: [
 
       // ── WEEK 1 ────────────────────────────────────────────
@@ -362,10 +362,38 @@ const STORE_CONFIG = {
       ],
 
       // ── WEEK 2 ────────────────────────────────────────────
-      // Uncomment and fill in when ready:
-      // [
-      //   { name: "Car Name", description: "...", image: "assets/images/imports/xxx-1.png", href: "imports/xxx.html" },
-      // ],
+      [
+        {
+          name: "Karin Sultan Backyard Boost",
+          description: "A JDM legend rebuilt from the ground up with a raw, tuner-built aesthetic and full LOD support.",
+          image: "assets/images/imports/karin-sultan-1.png",
+          href: "imports/karin-sultan.html",
+        },
+        {
+          name: "Lampadati Komoda FR-Works",
+          description: "Italian grand tourer elegance meets FR-Works track preparation — widebody estate with full tuning.",
+          image: "assets/images/imports/lampadati-komoda-1.png",
+          href: "imports/lampadati-komoda.html",
+        },
+        {
+          name: "Pegassi Osiris Roadster",
+          description: "Open-top Italian hypercar fury with aggressive aero and a mid-engine setup that delivers.",
+          image: "assets/images/imports/pegassi-osiris-1.png",
+          href: "imports/pegassi-osiris.html",
+        },
+        {
+          name: "Progen MF1 Spyder",
+          description: "British hypercar engineering with an animated retractable roof, custom sounds, and full tuning.",
+          image: "assets/images/imports/progen-mf1-1.png",
+          href: "imports/progen-mf1.html",
+        },
+        {
+          name: "Ubermacht Cypher MX2",
+          description: "German precision in a sleek aggressive coupe — full tuning compatibility and rewarding to drive.",
+          image: "assets/images/imports/ubermacht-cypher-1.png",
+          href: "imports/ubermacht-cypher.html",
+        },
+      ],
 
     ],
   },
