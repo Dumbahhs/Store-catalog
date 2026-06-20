@@ -88,7 +88,9 @@ function renderBusinesses() {
 
   STORE_CONFIG.businesses.forEach(cat => {
     const enabled = cat.items.filter(b => b.enabled);
-    if (enabled.length === 0) return;
+    const cardsHTML = enabled.length > 0
+      ? `<div class="cards-grid">${enabled.map(b => buildCard(b)).join('')}</div>`
+      : `<p style="color:var(--text-muted);text-align:center;padding:32px 0;font-size:.95rem;">No Businesses Available at this time.</p>`;
 
     html += `
       <div class="category-section">
@@ -97,9 +99,7 @@ function renderBusinesses() {
           <span class="category-tag">${cat.category}</span>
           <div class="category-line"></div>
         </div>
-        <div class="cards-grid">
-          ${enabled.map(b => buildCard(b)).join('')}
-        </div>
+        ${cardsHTML}
       </div>`;
   });
 

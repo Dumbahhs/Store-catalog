@@ -21,31 +21,18 @@ const STORE_CONFIG = {
       category: "Mechanics",
       items: [
         {
-          id: "otos-auto",
+          id: "lscustoms",
           enabled: true,
-          name: "Oto's Auto",
-          description: "A trusted local mechanic shop known for quality repairs and affordable service. Ideal for city residents needing reliable work done fast.",
-          location: "TBD",
-          type: "Automotive / Repairs",
-          tebexLink: "https://your-store.tebex.io/package/otos-auto",
-          images: [], // e.g. ["assets/images/businesses/otos-auto-1.jpg", "assets/images/businesses/otos-auto-2.jpg"]
-          features: [
-            { icon: "👥", text: "Employee Management — hire, fire, and set job grades" },
-            { icon: "💰", text: "Society Account — dedicated business bank account" },
-            { icon: "📦", text: "Business Storage — shared inventory for all employees" },
-            { icon: "📋", text: "Hiring Access — post official job listings" },
-            { icon: "⭐", text: "Custom Opportunities — exclusive owner-only contracts" },
-          ]
-        },
-        {
-          id: "bennys",
-          enabled: true,
-          name: "Benny's Original Motor Works",
-          description: "The city's most well-known custom vehicle shop. Full tuning, wraps, and upgrades available to the public.",
-          location: "LSIA Industrial District",
+          name: "LS Customs",
+          description: "The city's go-to vehicle modification shop. Full upgrade menus, plate changes, and livery installations all under one roof.",
+          location: "Los Santos",
           type: "Automotive / Services",
-          tebexLink: "https://your-store.tebex.io/package/bennys",
-          images: [],
+          tebexLink: "https://your-store.tebex.io/package/lscustoms",
+          images: [
+            "assets/images/businesses/lscustoms-outside.png",
+            "assets/images/businesses/lscustoms-inside.png",
+            "assets/images/businesses/lscustoms-inside2.png",
+          ],
           features: [
             { icon: "👥", text: "Employee Management — hire, fire, and set job grades" },
             { icon: "💰", text: "Society Account — dedicated business bank account" },
@@ -56,20 +43,56 @@ const STORE_CONFIG = {
           ]
         },
         {
-          id: "redline",
+          id: "pent-garage",
           enabled: true,
-          name: "Redline",
-          description: "High-performance automotive shop specializing in racing builds and precision custom modifications.",
-          location: "TBD",
-          type: "Automotive / Performance",
-          tebexLink: "https://your-store.tebex.io/package/redline",
-          images: [],
+          name: "Pent Garage",
+          description: "An upscale private garage offering premium vehicle storage, servicing, and performance tuning for serious car enthusiasts.",
+          location: "Los Santos",
+          type: "Automotive / Garage",
+          tebexLink: "https://your-store.tebex.io/package/pent-garage",
+          images: [
+            "assets/images/businesses/pentgarage-outside.png",
+            "assets/images/businesses/pentgarage-outside2.png",
+            "assets/images/businesses/pentgarage-inside.png",
+            "assets/images/businesses/pentgarage-inside2.png",
+          ],
           features: [
             { icon: "👥", text: "Employee Management — hire, fire, and set job grades" },
             { icon: "💰", text: "Society Account — dedicated business bank account" },
             { icon: "📦", text: "Business Storage — shared inventory for all employees" },
             { icon: "📋", text: "Hiring Access — post official job listings" },
             { icon: "⭐", text: "Custom Opportunities — exclusive owner-only contracts" },
+            { icon: "🚗", text: "Private Vehicle Storage — secure multi-slot garage access" },
+          ]
+        },
+      ]
+    },
+
+    // ══════════════════════════════════════════════════════
+    // DISPENSARIES
+    // ══════════════════════════════════════════════════════
+    {
+      category: "Dispensaries",
+      items: [
+        {
+          id: "ferdinand",
+          enabled: true,
+          name: "Ferdinand's",
+          description: "The city's premier weed dispensary. A fully licensed operation with a steady clientele and high demand. Staff management and society account included.",
+          location: "Los Santos",
+          type: "Dispensary / Weed Shop",
+          tebexLink: "https://your-store.tebex.io/package/ferdinand",
+          images: [
+            "assets/images/businesses/ferd-outside.png",
+            "assets/images/businesses/ferd-inside.png",
+          ],
+          features: [
+            { icon: "👥", text: "Employee Management — hire, fire, and set job grades" },
+            { icon: "💰", text: "Society Account — dedicated business bank account" },
+            { icon: "📦", text: "Business Storage — shared inventory for all employees" },
+            { icon: "📋", text: "Hiring Access — post official job listings" },
+            { icon: "⭐", text: "Custom Opportunities — exclusive owner-only contracts" },
+            { icon: "🌿", text: "Product Production — grow and sell weed to city residents" },
           ]
         },
       ]
@@ -86,10 +109,15 @@ const STORE_CONFIG = {
           enabled: true,
           name: "Cat Cafe",
           description: "A cozy and unique cafe experience with a loyal city following. Great atmosphere and consistent foot traffic.",
-          location: "TBD",
+          location: "Los Santos",
           type: "Food & Beverage",
           tebexLink: "https://your-store.tebex.io/package/catcafe",
-          images: [],
+          images: [
+            "assets/images/businesses/catcafe-outside.png",
+            "assets/images/businesses/catcafe-outside2.png",
+            "assets/images/businesses/catcafe-inside.png",
+            "assets/images/businesses/catcafe-inside2.png",
+          ],
           features: [
             { icon: "👥", text: "Employee Management — hire, fire, and set job grades" },
             { icon: "💰", text: "Society Account — dedicated business bank account" },
@@ -107,7 +135,11 @@ const STORE_CONFIG = {
           location: "Little Seoul",
           type: "Food & Beverage",
           tebexLink: "https://your-store.tebex.io/package/burgershot",
-          images: [],
+          images: [
+            "assets/images/businesses/burgershot-outside.png",
+            "assets/images/businesses/burgershot-inside.png",
+            "assets/images/businesses/burgershot-inside2.png",
+          ],
           features: [
             { icon: "👥", text: "Employee Management — hire, fire, and set job grades" },
             { icon: "💰", text: "Society Account — dedicated business bank account" },
@@ -115,6 +147,29 @@ const STORE_CONFIG = {
             { icon: "📋", text: "Hiring Access — post official job listings" },
             { icon: "⭐", text: "Custom Opportunities — exclusive owner-only contracts" },
             { icon: "🍔", text: "Food Production — craft and sell food to city residents" },
+          ]
+        },
+        {
+          id: "pizzathis",
+          enabled: true,
+          name: "Pizza This",
+          description: "A city staple for quick, reliable pizza. Known for its busy lunch rush and steady evening crowd. High foot traffic guaranteed.",
+          location: "Los Santos",
+          type: "Food & Beverage",
+          tebexLink: "https://your-store.tebex.io/package/pizzathis",
+          images: [
+            "assets/images/businesses/pizzathis-front.png",
+            "assets/images/businesses/pizzathis-side.png",
+            "assets/images/businesses/pizzathis-inside.png",
+            "assets/images/businesses/pizzathis-inside2.png",
+          ],
+          features: [
+            { icon: "👥", text: "Employee Management — hire, fire, and set job grades" },
+            { icon: "💰", text: "Society Account — dedicated business bank account" },
+            { icon: "📦", text: "Business Storage — shared inventory for all employees" },
+            { icon: "📋", text: "Hiring Access — post official job listings" },
+            { icon: "⭐", text: "Custom Opportunities — exclusive owner-only contracts" },
+            { icon: "🍕", text: "Food Production — craft and sell food to city residents" },
           ]
         },
         {
@@ -202,7 +257,11 @@ const STORE_CONFIG = {
           location: "Strawberry",
           type: "Entertainment / Nightlife",
           tebexLink: "https://your-store.tebex.io/package/vanilla-unicorn",
-          images: [],
+          images: [
+            "assets/images/businesses/vu-outside.png",
+            "assets/images/businesses/vu-outside2.png",
+            "assets/images/businesses/vu-inside.png",
+          ],
           features: [
             { icon: "👥", text: "Employee Management — hire, fire, and set job grades" },
             { icon: "💰", text: "Society Account — dedicated business bank account" },
@@ -214,7 +273,7 @@ const STORE_CONFIG = {
         },
         {
           id: "bahama-mamas",
-          enabled: false,
+          enabled: true,
           name: "Bahama Mamas",
           description: "The city's hottest nightclub. Premium sound system, full bar, and a constant stream of high-profile guests.",
           location: "TBD",
