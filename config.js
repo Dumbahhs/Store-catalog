@@ -45,7 +45,7 @@ const STORE_CONFIG = {
         },
         {
           id: "pent-garage",
-          enabled: true,
+          enabled: false,
           name: "Pent Garage",
           description: "An upscale private garage offering premium vehicle storage, servicing, and performance tuning for serious car enthusiasts.",
           location: "Los Santos",
@@ -78,7 +78,7 @@ const STORE_CONFIG = {
       items: [
         {
           id: "ferdinand",
-          enabled: true,
+          enabled: false,
           name: "Ferdinand's",
           description: "The city's premier weed dispensary. A fully licensed operation with a steady clientele and high demand. Staff management and society account included.",
           location: "Los Santos",
@@ -324,7 +324,7 @@ const STORE_CONFIG = {
   // ══════════════════════════════════════════════════════════
   donocars: {
     rotationStartDate: "2026-06-23",
-    rotationDays: 0.000289, // TESTING: 25 seconds — change back to 7 for weekly rotation
+    rotationDays: 7,
     slots: [
 
       // ── WEEK 1 ────────────────────────────────────────────
@@ -354,18 +354,18 @@ const STORE_CONFIG = {
           href: "imports/vapid-sandstorm.html",
         },
         {
-          name: "Vulcar Hachura R Custom",
-          description: "Sharp rally-inspired compact with full tuning support and distinctive bodywork.",
-          image: "assets/images/imports/vulcar-hachura-1.png",
-          href: "imports/vulcar-hachura.html",
+          name: "Pfister 811 S2",
+          description: "A JDM legend rebuilt from the ground up with a raw, tuner-built aesthetic and full LOD support.",
+          image: "assets/images/imports/porche-918-1.png",
+          href: "imports/pfister811s2.html",
         },
       ],
 
       // ── WEEK 2 ────────────────────────────────────────────
       [
         {
-          name: "Karin Sultan Backyard Boost",
-          description: "A JDM legend rebuilt from the ground up with a raw, tuner-built aesthetic and full LOD support.",
+          name: "Karin sultan backyard boost",
+          description: "Sharp rally-inspired compact with full tuning support and distinctive bodywork.",
           image: "assets/images/imports/karin-sultan-1.png",
           href: "imports/karin-sultan.html",
         },
